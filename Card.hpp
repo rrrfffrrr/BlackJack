@@ -1,22 +1,46 @@
 #pragma once
-#include <string>
+
+enum class ESuit {
+    Spade = 0,
+    Heart,
+    Club,
+    Diamond,
+
+    Count
+};
+
+enum class ERank {
+    Ace = 0,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+    Ten,
+    Jack,
+    Queen,
+    King,
+
+    Count
+};
 
 class Card {
     private:
-        std::string m_Suit;
-        std::string m_Rank;
+        ESuit m_Suit;
+        ERank m_Rank;
         
     public:
-        Card(const std::string suit, const std::string rank);
+        Card();
+        Card(const ESuit suit, const ERank rank);
 
     public:
-        inline std::string GetSuit() {
+        inline ESuit GetSuit() {
             return m_Suit;
         }
-        inline std::string GetRank() {
+        inline ERank GetRank() {
             return m_Rank;
         }
-        int GetScore();
-        bool HasAltScore();
-        int GetAltScore();
 };

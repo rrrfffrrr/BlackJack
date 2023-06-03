@@ -14,14 +14,15 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_definitions(-DUNICODE)
 
 set(HDRS
+    Blackjack.hpp
     Card.hpp
-    CardDefinitions.hpp
     CardUtils.hpp
     ShuffleMachine.hpp
 )
 
 set(SRCS
     main.cpp
+    Blackjack.cpp
     Card.cpp
     CardUtils.cpp
     ShuffleMachine.cpp

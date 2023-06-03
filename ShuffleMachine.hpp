@@ -5,17 +5,12 @@
 
 class ShuffleMachine {
     private:
-        std::vector<Card> m_Cards;
         std::default_random_engine m_Shuffler;
 
     public:
         ShuffleMachine();
+        ShuffleMachine(const ShuffleMachine&&) = delete;
 
-    private:
-        void AddCards();
-        void Shuffle();
     public:
-        void Initialize();
-        void PreventCardCounting(int amount);
-        Card Draw();
+        void Shuffle(std::vector<Card>& cards);
 };

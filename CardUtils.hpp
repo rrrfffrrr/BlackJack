@@ -1,8 +1,10 @@
 #pragma once
 #include <vector>
+#include <string>
 #include "Card.hpp"
 
-class CardUtils {
-    public:
-        static int CalculateMaximumScoreUnderOrEqualTargetScore(std::vector<Card>& cards, int targetScore = 21);
+struct CardUtils {
+    static std::string GetSuitCharacter(ESuit suit);
+    static std::string GetRankCharacter(ERank rank);
+    static void PushASetIntoDeck(std::vector<Card>& cards);
 };
