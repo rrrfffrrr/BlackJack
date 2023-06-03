@@ -266,4 +266,10 @@ void Blackjack::Run() {
         default: break;
         }
     }
+
+    gameState = EGameState::End;
+
+    cout << "=== Game result ===" << endl
+        << "Player coin: " << m_PlayerCoin << endl
+        << "Dealer coin: " << m_DealerCoin << endl;
 }
