@@ -136,7 +136,7 @@ void Blackjack::Run() {
     EGameResult gameResult = EGameResult::None;
     EGameEndReason gameEndReason = EGameEndReason::None;
 
-    while(m_DealerCoin > 0 && m_PlayerCoin > 0) {
+    while(gameState != EGameState::End) {
         switch (gameState)
         {
         case EGameState::PreRound: { // Starting a round
@@ -261,6 +261,11 @@ void Blackjack::Run() {
             gameResult = EGameResult::None;
             gameEndReason = EGameEndReason::None;
             cout << endl;
+
+            // Someone bursted
+            if (m_PlayerCoin <= 0 || m_DealerCoin <= 0) {
+                gameState = EGameState::End;
+            }
         }
         break;
         default: break;
